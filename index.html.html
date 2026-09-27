@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@iswiyanto — Materi Belajar Interaktif</title>
+<meta name="description" content="Materi belajar interaktif, worksheet kreatif, aplikasi edukasi anak, ebook dan program belajar pilihan untuk Moms.">
+<style>
+  :root{
+    --bg:#08152d;
+    --panel:#101d36;
+    --panel2:#152440;
+    --text:#f7f9ff;
+    --muted:#b8c2d8;
+    --blue:#2f80ed;
+    --cyan:#24b6ff;
+    --green:#20c997;
+    --line:rgba(255,255,255,.08);
+    --shadow:0 18px 50px rgba(0,0,0,.28);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(circle at 15% 10%,rgba(47,128,237,.22),transparent 30%),
+      radial-gradient(circle at 85% 70%,rgba(32,201,151,.12),transparent 28%),
+      linear-gradient(145deg,#07142c,#0b1224 60%,#161b29);
+    min-height:100vh;
+  }
+  .wrap{width:min(1080px,92%);margin:auto}
+  header{
+    position:sticky;top:0;z-index:20;
+    backdrop-filter:blur(16px);
+    background:rgba(8,21,45,.82);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    min-height:72px;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;
+  }
+  .brand{font-size:22px;font-weight:800;letter-spacing:-.5px}
+  .brand span{color:#45a3ff}
+  .nav-actions{display:flex;gap:12px;align-items:center}
+  .icon-btn{
+    width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    background:#182743;border:1px solid var(--line);color:white;text-decoration:none;font-size:20px
+  }
+  .hero{
+    padding:64px 0 35px;text-align:center;
+  }
+  .profile{
+    width:126px;height:126px;border-radius:50%;padding:7px;margin:0 auto 24px;
+    background:linear-gradient(135deg,#5c2cff,#7b31ff,#1f75ff);
+    box-shadow:0 0 0 8px rgba(71,63,170,.16),0 15px 40px rgba(0,0,0,.35);
+    position:relative;
+  }
+  .profile img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid #101a2d}
+  .online{
+    position:absolute;right:-3px;bottom:7px;width:25px;height:25px;border-radius:50%;
+    background:var(--green);border:5px solid #101a2d
+  }
+  h1{font-size:clamp(34px,6vw,58px);line-height:1.03;margin:0 0 14px;letter-spacing:-2px}
+  .verified{
+    display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;
+    background:#2196f3;font-size:16px;vertical-align:middle;margin-left:5px
+  }
+  .subtitle{
+    max-width:720px;margin:auto;color:var(--muted);font-size:18px;line-height:1.7
+  }
+  .hero-cta{
+    display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    min-height:48px;padding:0 20px;border-radius:14px;text-decoration:none;
+    font-weight:750;border:1px solid var(--line);transition:.2s
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:linear-gradient(135deg,#2878f0,#3aa5ff);color:white;box-shadow:0 12px 25px rgba(47,128,237,.22)}
+  .btn-secondary{background:#172541;color:white}
+  section{padding:28px 0}
+  .section-title{text-align:center;margin-bottom:24px}
+  .eyebrow{color:#48a4ff;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+  .section-title h2{font-size:30px;margin:7px 0 5px}
+  .section-title p{color:var(--muted);margin:0}
+  .products{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px
+  }
+  .card{
+    background:linear-gradient(145deg,rgba(21,36,64,.94),rgba(12,25,48,.94));
+    border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;min-height:215px
+  }
+  .card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .emoji{
+    width:52px;height:52px;border-radius:16px;background:#202f4e;display:grid;place-items:center;font-size:26px
+  }
+  .tag{font-size:12px;background:rgba(32,201,151,.12);color:#6ce1bd;padding:7px 10px;border-radius:999px;font-weight:800}
+  .card h3{font-size:19px;line-height:1.35;margin:17px 0 7px}
+  .card p{color:var(--muted);line-height:1.55;margin:0 0 17px}
+  .price{font-size:20px;font-weight:850;margin-top:auto}
+  .old{text-decoration:line-through;color:#7e8ba4;font-size:13px;font-weight:500;margin-left:7px}
+  .card .btn{margin-top:14px;width:100%;min-height:44px}
+  .features{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px
+  }
+  .feature{
+    background:rgba(16,29,54,.8);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center
+  }
+  .feature .emoji{margin:auto;width:50px;height:50px}
+  .feature h3{font-size:15px;margin:12px 0 5px}
+  .feature p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
+  .cta{
+    margin:38px 0 55px;padding:36px;border-radius:28px;text-align:center;
+    background:linear-gradient(135deg,#152b4e,#12203a);border:1px solid var(--line)
+  }
+  .cta h2{font-size:30px;margin:0 0 10px}
+  .cta p{color:var(--muted);max-width:650px;margin:0 auto 22px;line-height:1.65}
+  footer{padding:25px 0 40px;text-align:center;color:#7f8ca5;font-size:13px}
+  @media(max-width:720px){
+    .products{grid-template-columns:1fr}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .hero{padding-top:46px}
+    .nav{min-height:64px}
+  }
+  @media(max-width:430px){
+    .wrap{width:min(94%,520px)}
+    .features{grid-template-columns:1fr 1fr}
+    .card{padding:18px}
+    .hero{padding-bottom:22px}
+    .subtitle{font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span>LYNK</span> • @iswiyanto</div>
+    <div class="nav-actions">
+      <a class="icon-btn" href="https://lynk.id/iswiyanto" aria-label="Buka Lynk">↗</a>
+      <a class="icon-btn" href="#produk" aria-label="Produk">🛍️</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="profile">
+      <img src="https://cdn.lynkid.my.id/profile/14-09-2026/1789350891031_5763869.webp?quality=90&width=180" alt="Profil Iswiyanto">
+      <div class="online"></div>
+    </div>
+
+    <h1>@iswiyanto <span class="verified">✓</span></h1>
+    <p class="subtitle">
+      Hai Moms 👋 Temukan materi belajar interaktif favorit si kecil.
+      Dari aplikasi edukasi, worksheet kreatif, hingga ebook dan program belajar
+      untuk membantu anak belajar dengan cara yang menyenangkan.
+    </p>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#produk">✨ Lihat Produk</a>
+      <a class="btn btn-secondary" href="https://lynk.id/iswiyanto">🔗 Buka Lynk.id</a>
+    </div>
+  </section>
+
+  <section id="produk">
+    <div class="section-title">
+      <div class="eyebrow">Pilihan untuk Moms</div>
+      <h2>Produk Edukasi Pilihan</h2>
+      <p>Belajar lebih interaktif, kreatif, dan menyenangkan.</p>
+    </div>
+
+    <div class="products">
+      <article class="card">
+        <div class="card-top"><div class="emoji">🎨</div><span class="tag">PROMO</span></div>
+        <h3>Aplikasi Mewarnai Anak Usia 3–4 Tahun</h3>
+        <p>Aktivitas mewarnai sederhana untuk menemani anak belajar sambil bermain.</p>
+        <div class="price">Rp1.000 <span class="old">Rp100.000</span></div>
+        <a class="btn btn-primary" href="https://lynk.id/iswiyanto/2pnk9x4rw79e">Lihat Produk →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="emoji">🧩</div><span class="tag">EDUKATIF</span></div>
+        <h3>Tebak Gambar</h3>
+        <p>Permainan edukatif untuk melatih pengenalan gambar dan kemampuan berpikir anak.</p>
+        <div class="price">Rp99.000 <span class="old">Rp199.000</span></div>
+        <a class="btn btn-primary" href="https://lynk.id/iswiyanto">Lihat Produk →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="emoji">🔤</div><span class="tag">USIA 5–7</span></div>
+        <h3>Aplikasi Belajar Mengenal Huruf A–Z</h3>
+        <p>Media belajar untuk membantu anak mengenal huruf dengan pendekatan yang interaktif.</p>
+        <div class="price">Rp59.000 <span class="old">Rp99.000</span></div>
+        <a class="btn btn-primary" href="https://lynk.id/iswiyanto">Lihat Produk →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="emoji">🔢</div><span class="tag">USIA 4–6</span></div>
+        <h3>Aplikasi Berhitung Anak</h3>
+        <p>Latihan berhitung dasar untuk anak usia 4–6 tahun dalam format yang menyenangkan.</p>
+        <div class="price">Rp59.000 <span class="old">Rp99.000</span></div>
+        <a class="btn btn-primary" href="https://lynk.id/iswiyanto">Lihat Produk →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="emoji">🔟</div><span class="tag">USIA 3–5</span></div>
+        <h3>Belajar Mengenal Angka 1–10</h3>
+        <p>Materi pengenalan angka yang cocok untuk tahap awal perkembangan belajar anak.</p>
+        <div class="price">Rp59.000 <span class="old">Rp99.000</span></div>
+        <a class="btn btn-primary" href="https://lynk.id/iswiyanto">Lihat Produk →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><div class="emoji">🖍️</div><span class="tag">KREATIF</span></div>
+        <h3>Kumpulan Worksheet Kreatif</h3>
+        <p>Lembar aktivitas kreatif untuk menambah variasi kegiatan belajar anak di rumah.</p>
+        <div class="price">Rp9.000 <span class="old">Rp20.000</span></div>
+        <a class="btn btn-primary" href="https://lynk.id/iswiyanto">Lihat Produk →</a>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <div class="eyebrow">Kenapa di sini?</div>
+      <h2>Satu Halaman, Banyak Pilihan</h2>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="emoji">📚</div><h3>Materi Edukatif</h3><p>Konten belajar yang bisa digunakan anak secara bertahap.</p></div>
+      <div class="feature"><div class="emoji">🎮</div><h3>Interaktif</h3><p>Belajar dibuat lebih menarik melalui aktivitas dan permainan.</p></div>
+      <div class="feature"><div class="emoji">👩‍👧</div><h3>Untuk Moms</h3><p>Membantu orang tua menyediakan aktivitas belajar di rumah.</p></div>
+      <div class="feature"><div class="emoji">⚡</div><h3>Praktis</h3><p>Pilih produk lalu lanjutkan ke halaman pembelian.</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Siap menemani si kecil belajar? 🚀</h2>
+    <p>Pilih materi yang sesuai dengan usia dan kebutuhan anak. Semua pilihan produk tersedia melalui halaman Lynk.id.</p>
+    <a class="btn btn-primary" href="https://lynk.id/iswiyanto">Buka Semua Produk →</a>
+  </section>
+</main>
+
+<footer>
+  © 2026 @iswiyanto • Materi belajar & produk edukasi
+</footer>
+
+</body>
+</html>
